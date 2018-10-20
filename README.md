@@ -3,7 +3,6 @@
 Perform 'natural order' comparisons of strings in Haxe ('a1' < 'a12').
 
 Based on [natsort](https://github.com/sourcefrog/natsort) and [strnatcmp](https://github.com/php/php-src/blob/master/ext/standard/strnatcmp.c).
-
 Read more in original [README](https://github.com/sourcefrog/natsort/blob/master/README.md).
 
 ## API
