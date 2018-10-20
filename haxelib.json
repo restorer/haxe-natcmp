@@ -1,0 +1,10 @@
+{
+    "name": "natcmp",
+    "url": "https://github.com/restorer/haxe-natcmp/",
+    "license": "zlib",
+    "tags": ["cross", "natcmp", "natsort"],
+    "description": "Natural order comparisons of strings: 'a1' < 'a12'.",
+    "version": "1.0.0",
+    "releasenote": "Initial release.",
+    "contributors": ["restorer"]
+}

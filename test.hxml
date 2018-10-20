@@ -1,0 +1,88 @@
+-cp .
+-cp test
+-main Test
+
+--each
+
+-cmd echo ">>>> Interp"
+--next
+--interp
+
+--next
+
+-cmd echo ">>>> Neko"
+--next
+-neko .build/neko/test.n
+-cmd neko ./.build/neko/test.n
+
+--next
+
+-cmd echo ">>>> JS"
+--next
+-js .build/js/test.js
+-cmd node ./.build/js/test.js
+
+--next
+
+-cmd echo ">>>> CPP"
+--next
+-cpp .build/cpp
+-cmd ./.build/cpp/Test
+
+--next
+
+-cmd echo ">>>> HL"
+--next
+-hl .build/hl/test.hl
+-cmd hl ./.build/hl/test.hl
+
+--next
+
+-cmd echo ">>>> HL/C"
+--next
+-hl .build/hlc/test.c
+-cmd gcc -O3 -o ./.build/hlc/test -std=c11 -I ./.build/hlc ./.build/hlc/test.c -lhl && ./.build/hlc/test
+
+--next
+
+-cmd echo ">>>> PHP"
+--next
+-D php7
+-php .build/php
+-cmd php ./.build/php/index.php
+
+--next
+
+-cmd echo ">>>> Java"
+--next
+-java .build/java
+-cmd java -jar ./.build/java/Test.jar
+
+--next
+
+-cmd echo ">>>> Python"
+--next
+-python .build/python3/test.py
+-cmd echo ">>>> Python" && python3 ./.build/python3/test.py
+
+--next
+
+-cmd echo ">>>> CS"
+--next
+-D natcmp_cs_compareordinal
+-cs .build/cs
+-cmd mono ./.build/cs/bin/Test.exe
+
+--next
+
+-cmd echo ">>>> CPPIA"
+--next
+-cppia .build/test.cppia
+-cmd haxelib run hxcpp ./.build/test.cppia
+
+--next
+
+-cmd echo ">>>> LUA"
+--next
+-lua .build/lua/test.lua
+-cmd lua ./.build/lua/test.lua
