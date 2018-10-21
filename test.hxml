@@ -63,7 +63,7 @@
 -cmd echo ">>>> Python"
 --next
 -python .build/python3/test.py
--cmd echo ">>>> Python" && python3 ./.build/python3/test.py
+-cmd python3 ./.build/python3/test.py
 
 --next
 
@@ -84,5 +84,13 @@
 
 -cmd echo ">>>> LUA"
 --next
+-lua .build/lua/test.lua
+-cmd lua ./.build/lua/test.lua
+
+--next
+
+-cmd echo ">>>> LUA/vanilla"
+--next
+-D lua_vanilla
 -lua .build/lua/test.lua
 -cmd lua ./.build/lua/test.lua
