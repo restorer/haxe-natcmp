@@ -1,5 +1,27 @@
 package com.eightsines.natcmp;
 
+#if php
+
+class NatCmp {
+    public static inline function natCmp(a : String, b : String) : Int {
+        #if (haxe_ver >= "4.0.0")
+            return php.Syntax.code("strnatcmp({0}, {1})", a, b);
+        #else
+            return untyped __php__("strnatcmp({0}, {1})", a, b);
+        #end
+    }
+
+    public static inline function natCaseCmp(a : String, b : String) : Int {
+        #if (haxe_ver >= "4.0.0")
+            return php.Syntax.code("strnatcasecmp({0}, {1})", a, b);
+        #else
+            return untyped __php__("strnatcasecmp({0}, {1})", a, b);
+        #end
+    }
+}
+
+#else
+
 /**
     NatCmp -- Perform 'natural order' comparisons of strings in Haxe.
     Copyright (C) 2018 by Viachaslau Tratsiak <viachaslau.tratsiak@gmail.com>
@@ -212,3 +234,5 @@ class NatCmp {
         );
     }
 }
+
+#end
